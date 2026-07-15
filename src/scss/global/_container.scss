@@ -1,0 +1,19 @@
+@use "../base" as *;
+
+
+[class*="container"] {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0 20px;
+
+
+  @media (min-width: $tablet) {
+    max-width: 990px;
+    padding: 0 15px;
+  }
+
+  @media (min-width: $desktop) {
+    max-width: 1200px;
+    padding: 0 10px;
+  }
+}

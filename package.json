@@ -1,0 +1,23 @@
+{
+  "name": "website-design",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "sass --watch src/scss:assets/css/ --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladyslavOnishchenko/website-design.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladyslavOnishchenko/website-design/issues"
+  },
+  "homepage": "https://github.com/VladyslavOnishchenko/website-design#readme",
+  "devDependencies": {
+    "sass": "^1.99.0"
+  }
+}
