@@ -6,85 +6,29 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
-            rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="reset.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
 </head>
-<body>
+<body class="body">
 <div class="wrapper">
-    <header class="header">
+    <div class="header">
         <div class="header__container">
-            <a class="header__logo" href="/">
-                <img src="images/header-logo.png" alt="logo">
-            </a>
-            <ul class="header__list">
-                <li class="header__item">
-                    <a class="header__link" href="/test1">
-                        Services
-                    </a>
-                </li>
-                <li class="header__item">
-                    <a class="header__link" href="/test2">
-                        Industries
-                    </a>
-                </li>
-
-                <li class="header__item">
-                    <a class="header__link" href="/test3">
-                        Technologies
-                    </a>
-                </li>
-
-                <li class="header__item">
-                    <a class="header__link" href="/test1"> Case Studies </a>
-                </li>
-
-                <li class="header__item">
-                    <a class="header__link" href="/test2">
-                        Insights
-                    </a>
-                </li>
-
-                <li class="header__item">
-                    <a class="header__link" href="/test3">
-                        Company
-                    </a>
-                </li>
-            </ul>
-
-            <div class="header__burger">
-                <button class="header__burger-button">Menu</button>
-            </div>
-            <a class="header__menu" href="/menu">
-                Contact
-                <div class="header-btn__arrow">
-                    <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                    >
-                        <path
-                                d="M13.9258 6.93872L18.8511 11.8641L13.9258 16.7895"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="square"
-                        ></path>
-                        <path
-                                d="M4.99984 11.8637L18.1368 11.8637"
-                                stroke="white"
-                                stroke-width="1.5"
-                                stroke-linecap="square"
-                        ></path>
-                    </svg>
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <img src="src/images/header/header-logo.png" alt="header-logo">
                 </div>
-            </a>
+                <div class="header__menu">
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__list-item"><a href="#" class="header__link">Company</a></li>
+                            <li class="header__list-item"><a href="#" class="header__link">Services</a></li>
+                            <li class="header__list-item"><a href="#" class="header__link">Resources</a></li>
+                        </ul>
+                    </nav>
+                    <button class="header__button">Contact Us</button>
+                </div>
+            </div>
         </div>
-    </header>
+    </div>
 </div>
 </body>
 </html>

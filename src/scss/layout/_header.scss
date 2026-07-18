@@ -1,0 +1,18 @@
+@use "../abstracts" as *;
+
+.header {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    max-width: 130px;
+    height: 42px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+}
