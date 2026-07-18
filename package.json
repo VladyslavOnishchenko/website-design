@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "dev": "sass --watch src/scss:assets/css/ --style=compressed"
+    "dev": "sass --watch src/scss:assets/css/ --style=compressed --load-path=src/scss"
   },
   "repository": {
     "type": "git",
