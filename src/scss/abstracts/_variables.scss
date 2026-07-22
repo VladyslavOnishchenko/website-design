@@ -1,0 +1,26 @@
+
+//Colors
+$black: #000000;
+$black-soft: #0F0F0F;
+$black-warm: #110F0F;
+$white: #FFFFFF;
+$purple: #8B7BCF;
+$steel: #A1AEBF;
+$orange: #EF9364;
+$yellow: #FFA800;
+
+//System-colors
+$color-bg: $black-warm;
+$color-bg-dark: $black-soft;
+$color-text: $white;
+$color-text-muted: rgba(255,255,255,0.6);
+$color-accent: $yellow;
+
+//Typography
+$font-primary: 'Agrandir', sans-serif;
+
+$fw-regular: 400;
+$fw-bold:    700;
+
+//Size
+$container-width: 1440px;

@@ -1,5 +1,35 @@
+@use "../abstracts" as *;
 
-@mixin button {
-  border-radius: 120px;
-  font-size: 16px;
+.button{
+  font-weight: $fw-bold;
+  border-radius: 100px;
+  background-color: $color-accent;
+  color: $black;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  cursor: pointer;
+  border: transparent;
+
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &--secondary{
+    color: $color-accent;
+    background-color: transparent;
+    border: 1px solid $color-accent;
+    padding: 10px 24px;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $black;
+    }
+  }
+
 }

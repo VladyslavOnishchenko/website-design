@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
-
 .header {
+
   &__wrapper {
     display: flex;
     align-items: center;
@@ -8,11 +8,28 @@
   }
 
   &__logo {
-    max-width: 130px;
+    display: block;
+    max-width: 183px;
     height: 42px;
   }
 
   &__menu {
     display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__list {
+    display: flex;
+    font-weight: $fw-bold;
+  }
+
+  &__link{
+    padding: 12px;
+    line-height: 1.25;
+  }
+
+  &__button {
+    padding: 10px 24px;
   }
 }
