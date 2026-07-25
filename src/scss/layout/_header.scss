@@ -1,5 +1,28 @@
 @use "../abstracts" as *;
+
+.body {
+  overflow-x: hidden;
+}
+
 .header {
+  padding: 24px 0;
+  backdrop-filter: blur(18px);
+  background-color: rgba($black-soft, 0.4);
+  top: 0;
+  z-index: 100;
+  position: sticky;
+  //overflow: hidden;
+
+
+  &::before {
+    @include blob($purple);
+    width: 352px;
+    height: 597px;
+    z-index: -1;
+    top: -50px;
+    right: -50px;
+  }
+
 
   &__wrapper {
     display: flex;
@@ -17,19 +40,77 @@
     display: flex;
     align-items: center;
     gap: 16px;
+
+    @media (max-width: 750px) {
+      //display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: calc(100vh - 90px);
+      width: 100%;
+      flex-direction: column;
+      padding: 18px 30px;
+      transform: translateX(100%);
+      margin-top: 90px;
+      background-color: rgba($white, 0.3);
+      //backdrop-filter: blur(15px);
+      transition: transform 0.3s;
+      border-radius: 14px;
+      font-size: 20px;
+      gap: 20px;
+    }
+    &--open{
+      @media(max-width: 750px) {
+        display: flex;
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+    }
   }
 
   &__list {
     display: flex;
     font-weight: $fw-bold;
+    @media (max-width: 750px) {
+      flex-direction: column;
+  }
   }
 
-  &__link{
+  &__link {
     padding: 12px;
     line-height: 1.25;
+    @include hover-link;
   }
 
   &__button {
     padding: 10px 24px;
+  }
+
+  &__burger {
+    display: none;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 46px;
+    height: 40px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 20%;
+    border: 1px solid $color-accent;
+
+
+    @media (max-width: 750px) {
+    display: flex;
+  }
+
+    span {
+      display: block;
+      height: 3px;
+      width: 90%;
+      background-color: $color-accent;
+      border-radius: 12px;
+    }
+
   }
 }

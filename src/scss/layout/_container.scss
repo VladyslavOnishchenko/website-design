@@ -1,18 +1,19 @@
 @use "../base/index" as *;
-
+@use "../abstracts" as *;
 
 [class*="container"] {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 20px;
-}
 
-//  @media (min-width: $tablet) {
-//    max-width: 990px;
-//    padding: 0 15px;
-//  }
-//
-//  @media (min-width: $desktop) {
-//    max-width: 1200px;
-//    padding: 0 10px;
-//  }
+
+  @media (max-width: $tablet-width) {
+    //max-width: 990px;
+    padding: 0 15px;
+  }
+
+  @media (max-width: $phone-width) {
+    //max-width: 1200px;
+    padding: 0 10px;
+  }
+}

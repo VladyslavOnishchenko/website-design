@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+@mixin blob($color) {
+  content: "";
+  position: absolute;
+  background-color: $color;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+@mixin hover{
+  transition: all 0.3s;
+
+  @media (hover: hover){
+    &:hover{
+      @content;
+    }
+  }
+}
+
+@mixin hover-link{
+  @include hover{
+    color: $color-accent;
+  }
+}
+
+@mixin hover-button{
+  @include hover{
+    background-color: $black;
+    color: $white;
+  }
+}
+
+@mixin hover-button-secondary{
+  @include hover{
+    background-color: $color-accent;
+    color: $black;
+  }
+}
