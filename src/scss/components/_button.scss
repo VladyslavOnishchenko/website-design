@@ -24,6 +24,9 @@
     border: 1px solid $color-accent;
     padding: 10px 24px;
     @include hover-button-secondary;
+    @media (max-width: 750px) {
+      font-size: 20px;
+    }
   }
 
 }
