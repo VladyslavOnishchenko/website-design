@@ -91,7 +91,8 @@ function isPositive(number){
 isPositive(-3);
 
 
-//№7 --- норм , а если number = 0 ? 0 - это целое число , if number =< 0
+//№7 --- норм
+
 function isNegative(number){
     if (number < 0){
         return console.log(true)
