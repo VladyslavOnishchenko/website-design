@@ -37,15 +37,16 @@
 
 
 
-//№1
+//№1 --- гуд
 function subtract(a, b) {
     return console.log(a - b);
 }
 subtract(1, 5);
 
 
-//№2
+//№2 --- норм
 function divide(a, b){
+    //хм,а если -1 , -2 , -342 вставлю сюда?) Проверять нужно if b >= 0 что значит, если б большое или равно нулю
     if(b === 0){
         return console.log("You can't divide by zero(");
     }
@@ -54,14 +55,14 @@ function divide(a, b){
 divide(2, 0);
 
 
-//№3
+//№3 --- гуд
 function square(number){
     return console.log(number ** 2);
 }
 square(8);
 
 
-//№4
+//№4 --- остаток от числа  при делении  гуд
 function isOdd(number){
     if(number % 2 === 0){
         return console.log(false);
@@ -72,14 +73,14 @@ function isOdd(number){
 isOdd(4);
 
 
-//№5
+//№5 за тернарник - лайк
 function min(a, b){
     return a < b ? console.log(a) : console.log(b);
 }
 min(11,2);
 
 
-//№6
+//№6 --- норм
 function isPositive(number){
     if(number > 0){
         return console.log(true);
@@ -90,7 +91,7 @@ function isPositive(number){
 isPositive(-3);
 
 
-//№7
+//№7 --- норм , а если number = 0 ? 0 - это целое число , if number =< 0
 function isNegative(number){
     if (number < 0){
         return console.log(true)
@@ -101,15 +102,16 @@ function isNegative(number){
 isNegative(5);
 
 
-//№8
+//№81 --- тут гуд, за тернарник - лайк
 function isZero(number){
     return number === 0 ? console.log(true) : console.log("Your number is not zero");
 }
 isZero(-32)
 
 
-//№9
+//№9 --- гуд
 function absolute(number){
+    // а тут правильно сделал кста)
     if(number >= 0){
         return console.log(number);
     } else{
@@ -119,7 +121,7 @@ function absolute(number){
 absolute(-8);
 
 
-//№10
+//№10 тут норм, но рассмотрим констукцию swich case что бы не городить иф елсе
 function getGrade(score){
     if( score >= 90){
         return console.log("Отлично");
