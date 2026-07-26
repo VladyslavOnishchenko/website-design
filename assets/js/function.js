@@ -122,7 +122,7 @@ function absolute(number){
 absolute(-8);
 
 
-//№10 тут норм, но рассмотрим констукцию swich case что бы не городить иф елсе
+//№10 тут норм, но рассмотрим констукцию swich case что бы не городить иф елсе --- ниже
 function getGrade(score){
     if( score >= 90){
         return console.log("Отлично");
@@ -135,3 +135,24 @@ function getGrade(score){
     }
 }
 getGrade(49);
+
+// function getGrade(score) {
+//     switch (true) {
+//         case score >= 90:
+//             console.log("Отлично");
+//             break;
+//
+//         case score >= 70:
+//             console.log("Хорошо");
+//             break;
+//
+//         case score >= 50:
+//             console.log("Удовлетворительно");
+//             break;
+//
+//         default:
+//             console.log("Не сдано");
+//     }
+// }
+//
+// getGrade(49);
