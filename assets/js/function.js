@@ -39,9 +39,10 @@
 
 //№1 --- гуд
 function subtract(a, b) {
-    return console.log(a - b);
+    // return console.log(a - b);
+    return a - b;
 }
-subtract(1, 5);
+console.log(subtract(1, 55));
 
 
 //№2 --- норм
@@ -52,7 +53,7 @@ function divide(a, b){
     }
     return console.log(a / b)
 }
-divide(2, 0);
+divide(2, -23);
 
 
 //№3 --- гуд
@@ -156,3 +157,29 @@ getGrade(49);
 // }
 //
 // getGrade(49);
+
+
+//№11
+function getGradeSwitch(score){
+    switch (true){
+        case score >= 90:
+        console.log("Отлично");
+            break;
+
+        case score >= 70:
+            console.log("Хорошо");
+            break;
+
+        case score >= 50:
+            console.log("Удовлетворительно");
+            break;
+
+        default:
+            console.log("Не сдано");
+
+    }
+}
+getGradeSwitch(70);
+
+
+

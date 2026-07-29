@@ -1,0 +1,90 @@
+@use "../abstracts" as *;
+
+.hero {
+
+  background-image:
+          linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+          linear-gradient(0deg,  rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  position: relative;
+  z-index: -111;
+
+
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    //width: clamp(324px, 7vw, 524px);
+    gap: 16px;
+    width: 46%;
+    margin-top: 100px;
+  }
+
+  &::after {
+    @include blob($orange);
+    width: 352px;
+    height: 597px;
+    z-index: -10;
+    bottom: -180px;
+    left: -150px;
+    rotate: (90deg);
+
+  }
+
+  &::before {
+    @include blob($purple);
+    width: 392px;
+    height: 597px;
+    z-index: -10;
+    top: -190px;
+    right: -90px;
+    rotate: (-25deg);
+  }
+
+  &__title {
+    font-size: 94px;
+    font-weight: $fw-bold;
+    line-height: 0.9;
+    width: 84%;
+    letter-spacing: 0.08em;
+
+    &-accent {
+      background: linear-gradient(45deg, #9F8CED 0%, #FA7C0B 18%, #9DE8EE 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+  }
+
+  &__description {
+    font-size: 16px;
+    color: rgba($white, 0.6);
+    width: 90%;
+  }
+
+  &__form {
+    display: flex;
+    gap: 16px;
+    //font-size: 16px;
+    width: 76%;
+    margin-top: 16px;
+
+    input {
+      width: 100%;
+      border: 1px solid $steel;
+      border-radius: 100px;
+      padding: 14px;
+
+      &::placeholder {
+        color: $white;
+      }
+    }
+  }
+}

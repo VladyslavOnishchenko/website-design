@@ -1,27 +1,12 @@
 @use "../abstracts" as *;
 
-.body {
-  overflow-x: hidden;
-}
-
 .header {
   padding: 24px 0;
   backdrop-filter: blur(18px);
-  background-color: rgba($black-soft, 0.4);
+  background-color: rgba($black, 0.2);
   top: 0;
-  z-index: 100;
+  z-index: -1;
   position: sticky;
-  //overflow: hidden;
-
-
-  &::before {
-    @include blob($purple);
-    width: 352px;
-    height: 597px;
-    z-index: -1;
-    top: -50px;
-    right: -50px;
-  }
 
 
   &__wrapper {
