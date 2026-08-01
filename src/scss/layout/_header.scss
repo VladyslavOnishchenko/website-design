@@ -5,7 +5,7 @@
   backdrop-filter: blur(18px);
   background-color: rgba($black, 0.2);
   top: 0;
-  z-index: -1;
+  z-index: 100;
   position: sticky;
 
 
@@ -37,7 +37,8 @@
       padding: 38px 30px;
       transform: translateX(100%);
       margin-top: 90px;
-      background-color: rgba($white, 0.3);
+      background-color: rgba($black, 1);
+      border: 3px solid rgba($white, 0.3);
       //backdrop-filter: blur(15px);
       transition: transform 0.3s;
       border-radius: 14px;
