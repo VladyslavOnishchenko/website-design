@@ -37,7 +37,8 @@
       padding: 38px 30px;
       transform: translateX(100%);
       margin-top: 90px;
-      background-color: rgba($black, 1);
+      //background-color: rgba($black, 1);
+      background: linear-gradient(45deg, #9F8CED 0%, $black 10%, $black 90%, #9DE8EE 100%);
       border: 3px solid rgba($white, 0.3);
       //backdrop-filter: blur(15px);
       transition: transform 0.3s;
