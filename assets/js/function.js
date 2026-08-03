@@ -186,8 +186,6 @@
 //===========================================================================================
 
 
-
-
 //
 //
 // nums.forEach(function(num) {
@@ -196,146 +194,233 @@
 //     }
 // })
 
+//
+//
+//
+//
+// let nums = [1,2,31,400,5,-6,47];
+// let lines = ["Bob","Charlotte", "John", "Sophia", "Jordan", "Piter", "William"];
+// let users = [
+//     {id: 1, name: "John", age: 9},
+//     {id: 2, name: "Sophia", age: 23},
+//     {id: 3, name: "Jordan", age: 52},
+//     {id: 4, name: "Piter", age: 94},
+//     {id: 5, name: "Max", age: 12},
+//     {id: 6, name: "John", age: 14},
+// ];
+//
+//
+// //№1
+// let plusOne = nums.map(function(num) {
+//     return num + 1;
+// })
+// console.log(plusOne);
+//
+//
+// //№2
+// let multiplyByTwo = nums.map(function(num){
+//     return num * 2;
+// })
+// console.log(multiplyByTwo);
+//
+//
+// //№3
+// let convertToString = nums.map(function(num){
+//     return num.toString();
+// })
+// console.log(convertToString);
+//
+//
+// //№4
+// let lineLength = lines.map(function(line){
+//     return line.length;
+// })
+// console.log(lineLength);
+//
+//
+// //№5
+// let evenNumbers = nums.filter(function(num){
+//    return num % 2 === 0 ? num : false;
+// })
+// console.log(evenNumbers);
+//
+//
+// //№6
+// let moreThanTen = nums.filter(function(num){
+//     return num > 10 ? num : false;
+// })
+// console.log(moreThanTen);
+//
+//
+// //№7
+// let lineLongerThanFive = lines.filter(function(line){
+//     return line.length > 5 ? line : false;
+// })
+// console.log(lineLongerThanFive);
+//
+//
+// //№8
+// let firstEvenNumber = nums.find(function(num){
+//     return num % 2 === 0 ? num : false;
+// })
+// console.log(firstEvenNumber);
+//
+//
+// //№9
+// let whereUserId = users.find(function(user){
+//     return user.id === 3;
+// })
+// console.log(whereUserId);
+//
+//
+// //№10
+// let whereUserName = users.find(function(user){
+//     return user.name === "John";
+// })
+// console.log(whereUserName);
+//
+//
+// //№11
+// let isThereNumber = nums.includes(1)
+// console.log(isThereNumber);
+//
+//
+// //№12
+// let  leastOneNegative = nums.some(function(num){
+//     return num < 0 ? num : false;
+// })
+// console.log(leastOneNegative);
+//
+//
+// //№13
+// let allPositive = nums.every(function(num){
+//     return num > 0 ? num : false;
+// })
+// console.log(allPositive);
+//
+//
+// //№14
+// nums.forEach(function(num){
+//     console.log(num)
+// })
+//
+//
+// //№15
+// let sumOfAll = nums.reduce(function(sum, num){
+//     return sum + num;
+// }, 0)
+// console.log(sumOfAll);
+//
+//
+// //№16
+// let maxNumber = nums.reduce(function(accumulator,num){
+//     return Math.max(accumulator, num);
+// }, -Infinity);
+// console.log(maxNumber)
+//
+//
+// //№17
+// let setOfWords = lines.join(", ");
+// console.log(setOfWords);
+//
+//
+// //№18
+// let ascendingOrder = nums.sort((a, b) => a - b);
+// console.log(ascendingOrder);
+//
+//
+// //№19
+// let alphabeticalOrder = lines.sort();
+// console.log(alphabeticalOrder);
+//
+//
+// //№20
+// let usersInOrder = users.sort((a, b) => a.age - b.age);
+// console.log(usersInOrder);
 
 
-
-
-let nums = [1,2,31,400,5,-6,47];
-let lines = ["Bob","Charlotte", "John", "Sophia", "Jordan", "Piter", "William"];
-let users = [
-    {id: 1, name: "John", age: 9},
-    {id: 2, name: "Sophia", age: 23},
-    {id: 3, name: "Jordan", age: 52},
-    {id: 4, name: "Piter", age: 94},
-    {id: 5, name: "Max", age: 12},
-    {id: 6, name: "John", age: 14},
-];
-
+//=============================================================================================
 
 //№1
-let plusOne = nums.map(function(num) {
-    return num + 1;
-})
-console.log(plusOne);
-
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
 
 //№2
-let multiplyByTwo = nums.map(function(num){
-    return num * 2;
-})
-console.log(multiplyByTwo);
-
+for (let i = 10; i >= 1 ; i--) {
+    console.log(i);
+}
 
 //№3
-let convertToString = nums.map(function(num){
-    return num.toString();
-})
-console.log(convertToString);
-
+for (let i = 1; i <= 20; i++){
+    if (i % 2 === 0) {
+        console.log(i);
+    }
+}
 
 //№4
-let lineLength = lines.map(function(line){
-    return line.length;
-})
-console.log(lineLength);
-
+for (let i = 1; i <= 20; i++){
+    if (i % 2 === 1){
+        console.log(i);
+    }
+}
 
 //№5
-let evenNumbers = nums.filter(function(num){
-   return num % 2 === 0 ? num : false;
-})
-console.log(evenNumbers);
-
+let sum = 0;
+for (let i = 1; i <= 10; i++){
+    sum = sum + i;
+}
+console.log(sum);
 
 //№6
-let moreThanTen = nums.filter(function(num){
-    return num > 10 ? num : false;
-})
-console.log(moreThanTen);
-
+let i = 1;
+while(i <= 10){
+    console.log(i);
+    i++;
+}
 
 //№7
-let lineLongerThanFive = lines.filter(function(line){
-    return line.length > 5 ? line : false;
-})
-console.log(lineLongerThanFive);
-
+let e = 10;
+while(e >= 1){
+    console.log(e);
+    e--;
+}
 
 //№8
-let firstEvenNumber = nums.find(function(num){
-    return num % 2 === 0 ? num : false;
-})
-console.log(firstEvenNumber);
-
+let k = 1;
+while(k <= 30){
+    if (k % 3 === 0) {
+        console.log(k);
+    }
+    k++;
+}
 
 //№9
-let whereUserId = users.find(function(user){
-    return user.id === 3;
-})
-console.log(whereUserId);
-
+let g = 1;
+let gSum = 0;
+while(g <= 100){
+    g++;
+    gSum = gSum + g;
+}
+console.log(gSum);
 
 //№10
-let whereUserName = users.find(function(user){
-    return user.name === "John";
-})
-console.log(whereUserName);
-
+let h = 1;
+while(h <= 50){
+    if (h % 5 === 0) {
+        console.log(h);
+    }
+    h++;
+}
 
 //№11
-let isThereNumber = nums.includes(1)
-console.log(isThereNumber);
-
+for (let i = 1; i <= 10; i++){
+    square = i ** 2;
+    console.log(square);
+}
 
 //№12
-let  leastOneNegative = nums.some(function(num){
-    return num < 0 ? num : false;
-})
-console.log(leastOneNegative);
-
-
-//№13
-let allPositive = nums.every(function(num){
-    return num > 0 ? num : false;
-})
-console.log(allPositive);
-
-
-//№14
-nums.forEach(function(num){
-    console.log(num)
-})
-
-
-//№15
-let sumOfAll = nums.reduce(function(sum, num){
-    return sum + num;
-}, 0)
-console.log(sumOfAll);
-
-
-//№16
-let maxNumber = nums.reduce(function(accumulator,num){
-    return Math.max(accumulator, num);
-}, -Infinity);
-console.log(maxNumber)
-
-
-//№17
-let setOfWords = lines.join(", ");
-console.log(setOfWords);
-
-
-//№18
-let ascendingOrder = nums.sort((a, b) => a - b);
-console.log(ascendingOrder);
-
-
-//№19
-let alphabeticalOrder = lines.sort();
-console.log(alphabeticalOrder);
-
-
-//№20
-let usersInOrder = users.sort((a, b) => a.age - b.age);
-console.log(usersInOrder);
+for (let i = 1; i <= 10; i++){
+    cube = i ** 3;
+    console.log(cube);
+}
