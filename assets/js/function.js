@@ -347,48 +347,48 @@ for (let i = 1; i <= 10; i++) {
 }
 
 //№2
-for (let i = 10; i >= 1 ; i--) {
+for (let i = 10; i >= 1; i--) {
     console.log(i);
 }
 
 //№3
-for (let i = 1; i <= 20; i++){
+for (let i = 1; i <= 20; i++) {
     if (i % 2 === 0) {
         console.log(i);
     }
 }
 
 //№4
-for (let i = 1; i <= 20; i++){
-    if (i % 2 === 1){
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 === 1) {
         console.log(i);
     }
 }
 
 //№5
 let sum = 0;
-for (let i = 1; i <= 10; i++){
+for (let i = 1; i <= 10; i++) {
     sum = sum + i;
 }
 console.log(sum);
 
 //№6
 let i = 1;
-while(i <= 10){
+while (i <= 10) {
     console.log(i);
     i++;
 }
 
 //№7
 let e = 10;
-while(e >= 1){
+while (e >= 1) {
     console.log(e);
     e--;
 }
 
 //№8
 let k = 1;
-while(k <= 30){
+while (k <= 30) {
     if (k % 3 === 0) {
         console.log(k);
     }
@@ -398,7 +398,7 @@ while(k <= 30){
 //№9
 let g = 1;
 let gSum = 0;
-while(g <= 100){
+while (g <= 100) {
     g++;
     gSum = gSum + g;
 }
@@ -406,7 +406,7 @@ console.log(gSum);
 
 //№10
 let h = 1;
-while(h <= 50){
+while (h <= 50) {
     if (h % 5 === 0) {
         console.log(h);
     }
@@ -414,13 +414,38 @@ while(h <= 50){
 }
 
 //№11
-for (let i = 1; i <= 10; i++){
+for (let i = 1; i <= 10; i++) {
     square = i ** 2;
     console.log(square);
 }
 
 //№12
-for (let i = 1; i <= 10; i++){
+for (let i = 1; i <= 10; i++) {
     cube = i ** 3;
     console.log(cube);
+}
+
+//№13
+for (let i = 1; i <= 10; i++) {
+    for (let j = 1; j <= 10; j++) {
+        mbe = j * 8;
+
+    }
+    console.log(`8 * ${i} = ${mbe}`);
+}
+
+//№14
+let m = 1;
+let mSum = 0;
+while (m <= 20) {
+    if (m % 2 === 0) {
+        mSum = mSum + m;
+    }
+    m++;
+}
+console.log(mSum);
+
+//№15
+for (let i = 1; i <= 30; i++) {
+    console.log(i % 3 === 0 ? 'Fizz' : i);
 }
