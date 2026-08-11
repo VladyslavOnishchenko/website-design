@@ -1,36 +1,36 @@
-@use "../abstracts" as *;
-
-.footer__switches{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.footer__traffic-light {
-  font-weight: $fw-bold;
-  border-radius: 100px;
-  background-color: $color-accent;
-  color: $black;
-  padding: 12px 24px;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0;
-  cursor: pointer;
-  border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &--active{
-    &:nth-child(1){
-      background-color: red;
-    }
-    &:nth-child(2){
-      background-color: yellow;
-    }
-    &:nth-child(3){
-      background-color: green;
-    }
-  }
-}
-
+//@use "../abstracts" as *;
+//
+//.footer__switches{
+//  display: flex;
+//  flex-direction: column;
+//  gap: 1rem;
+//}
+//
+//.footer__traffic-light {
+//  font-weight: $fw-bold;
+//  border-radius: 100px;
+//  background-color: $color-accent;
+//  color: $black;
+//  padding: 12px 24px;
+//  text-transform: uppercase;
+//  font-size: 14px;
+//  letter-spacing: 0;
+//  cursor: pointer;
+//  border: 1px solid transparent;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//
+//  &--active{
+//    &:nth-child(1){
+//      background-color: red;
+//    }
+//    &:nth-child(2){
+//      background-color: yellow;
+//    }
+//    &:nth-child(3){
+//      background-color: green;
+//    }
+//  }
+//}
+//

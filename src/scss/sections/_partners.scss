@@ -1,45 +1,80 @@
 @use "../abstracts/index" as *;
 
-.partners{
+.partners {
   background-color: $black;
 
-  &__wrapper{
+  &__wrapper {
     padding-top: 80px;
-    padding-bottom: 124px;
   }
 
-  &__text{
+  &__text {
     display: flex;
     justify-content: space-between;
     margin-bottom: 64px;
     gap: 64px;
+    @media(max-width: 850px){
+      gap: 56px;
+    }
   }
 
-  &__title{
+  &__title {
     font-size: 40px;
     font-weight: $fw-bold;
     width: 50%;
+    @media(max-width: 850px){
+      font-size: 36px;
+    }
   }
 
-  &__description{
-    font-size: 14px;
+  &__description {
+    font-size: 16px;
     color: $color-text-muted;
     width: 50%;
+    @media(max-width: 850px){
+      font-size: 14px;
+    }
   }
 
-  &__list{
+  &__list {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
+    flex-direction: column;
+    padding-bottom: 124px;
 
-    &-item{
-      border: 1px solid $steel;
-      border-radius: 10px;
+
+    &-right {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px 24px;
+      overflow: hidden;
+
+    }
+    &-right .track{
+      animation-direction: reverse;
+    }
+
+    &-left {
+      display: flex;
+      overflow: hidden;
 
     }
   }
+
+  &__track {
+    animation: scroll-left 30s linear infinite;
+    display: flex;
+    gap: 20px;
+  }
+
+  &__item {
+    border: 1px solid $steel;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    @media(max-width: 850px){
+      padding: 12px 20px;
+    }
+
+  }
+
 }
