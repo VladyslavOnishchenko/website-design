@@ -1,0 +1,9 @@
+@use "variables" as *;
+
+%section__title{
+  font-weight: $fw-bold;
+}
+
+%section__description{
+  color: $color-text-muted;
+}
