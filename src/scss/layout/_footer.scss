@@ -4,15 +4,15 @@
   background-color: $black;
 
   &__container {
-
   }
 
   &__wrapper {
     display: flex;
-    //gap: 125px;
     margin-bottom: 80px;
     padding-top: 80px;
     justify-content: space-between;
+    padding-left: 28px;
+    //padding-right: 20px;
     @media(max-width: 850px) {
       flex-wrap: wrap;
       gap: 60px;
@@ -28,8 +28,6 @@
     @media(max-width: 850px) {
       flex: 250px;
       transition: all 0.8s;
-      //justify-content: center;
-      //align-items: center;
     }
 
 
