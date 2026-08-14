@@ -489,68 +489,155 @@
 
 //======================================================================================================
 
+//
+// //№1
+// const arr = [1, 2, 3, 4];
+// let sum = 0;
+//
+// for (let i = 0; i < arr.length; i++) {
+//     sum = sum + arr[i];
+// }
+// console.log(sum);
+//
+// // arr.forEach((item) =>{
+// //     sum += item;
+// // })
+//
+//
+// //№2
+// const numbers = [4, 8, 1, 10, 3];
+// let max = numbers[0];
+//
+// for (let i = 0; i < numbers.length; i++) {
+//     numbers[i] > max ? max = numbers[i] : max ;
+// }
+// console.log(max);
+//
+//
+// //№3
+// const num = [4, 8, 1, 10];
+// let min = num[0];
+//
+// let i = 0;
+// while (i < num.length) {
+//     num[i] < min ? min = num[i] : min;
+//     i++;
+// }
+// console.log(min);
+//
+//
+// //№4
+// const array = [1, 2, 4, 5, 8];
+// let evenNumbers = 0;
+// //
+// // for (let i = 0; i < array.length; i++) {
+// //     array[i] % 2 === 0 ? evenNumbers++ : evenNumbers;
+// // }
+// // console.log(evenNumbers);
+//
+// array.forEach((num) => {
+//     if (num % 2 === 0) {
+//         evenNumbers += 1;
+//     }
+// })
+// console.log(evenNumbers);
+//
+//
+// //№5
+// const n = [1,2,3];
+// let reversN = [];
+//
+// for (let i = n.length; i >= 0; i--) {
+//     reversN.push(n[i]);
+// }
+// console.log(reversN);
+//
+//===================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+//
+// async function getPosts() {
+//
+//     try {
+//         const data = await fetch('https://dummyjson.com/posts');
+//
+//         if (!data.ok) {
+//             console.log('Error server')
+//         }
+//
+//         const dataPosts = await data.json();
+//
+//         console.log(dataPosts)
+//
+//     } catch (err) {
+//         console.log(err)
+//     }
+//
+// }
+// getPosts()
+
 
 //№1
-const arr = [1, 2, 3, 4];
-let sum = 0;
-
-for (let i = 0; i < arr.length; i++) {
-    sum = sum + arr[i];
-}
-console.log(sum);
-
-// arr.forEach((item) =>{
-//     sum += item;
-// })
-
-
-//№2
-const numbers = [4, 8, 1, 10, 3];
-let max = numbers[0];
-
-for (let i = 0; i < numbers.length; i++) {
-    numbers[i] > max ? max = numbers[i] : max ;
-}
-console.log(max);
-
-
-//№3
-const num = [4, 8, 1, 10];
-let min = num[0];
-
-let i = 0;
-while (i < num.length) {
-    num[i] < min ? min = num[i] : min;
-    i++;
-}
-console.log(min);
-
-
-//№4
-const array = [1, 2, 4, 5, 8];
-let evenNumbers = 0;
+// async function getPosts(){
 //
-// for (let i = 0; i < array.length; i++) {
-//     array[i] % 2 === 0 ? evenNumbers++ : evenNumbers;
+//     try{
+//         const data = await fetch('https://dummyjson.com/posts');
+//
+//
+//         if (!data.ok) {
+//             console.log('Error server')
+//         }
+//
+//         const dataPosts = await data.json();
+//
+//         dataPosts.posts.forEach(post => {
+//              console.log(post)
+//         });
+//     } catch(err){
+//         console.log(err);
+//     }
 // }
-// console.log(evenNumbers);
+// getPosts();
+//
+//
+//№2
+const posts = document.querySelector('.footer__posts');
 
-array.forEach((num) => {
-    if (num % 2 === 0) {
-        evenNumbers += 1;
+async function getPosts() {
+
+    try{
+        const data = await fetch('https://dummyjson.com/posts');
+
+        if(!data.ok){
+            console.log('Error server');
+        }
+
+        const dataPosts = await data.json();
+
+        dataPosts.posts.forEach((post) => {
+            console.log(post);
+            // posts.textContent += post.id + post.title + post.body + post.tags + post.reactions + post.views + post.userId;
+            posts.innerHTML += post.id + post.title + post.body + post.tags + post.reactions.likes + post.reactions.dislikes + post.views + post.userId;
+        })
+    }catch(err){
+        console.log(err);
     }
-})
-console.log(evenNumbers);
-
-
-//№5
-const n = [1,2,3];
-let reversN = [];
-
-for (let i = n.length; i >= 0; i--) {
-    reversN.push(n[i]);
 }
-console.log(reversN);
+getPosts();
+
+
+
+
+
 
 
 
