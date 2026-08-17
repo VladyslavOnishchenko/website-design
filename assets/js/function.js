@@ -451,29 +451,6 @@
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //
 //
 //
@@ -555,15 +532,6 @@
 //===================================================================================================
 
 
-
-
-
-
-
-
-
-
-
 //
 // async function getPosts() {
 //
@@ -610,29 +578,88 @@
 //
 //
 //№2
-const posts = document.querySelector('.footer__posts');
+// const posts = document.querySelector('.footer__posts');
+//
+// async function getPosts() {
+//
+//     try{
+//         const data = await fetch('https://dummyjson.com/posts');
+//
+//         if(!data.ok){
+//             console.log('Error server');
+//         }
+//
+//         const dataPosts = await data.json();
+//
+//         dataPosts.posts.forEach((post) => {
+//             console.log(post);
+//             // posts.textContent += post.id + post.title + post.body + post.tags + post.reactions + post.views + post.userId;
+//             posts.innerHTML += post.id + post.title + post.body + post.tags + post.reactions.likes + post.reactions.dislikes + post.views + post.userId;
+//         })
+//     }catch(err){
+//         console.log(err);
+//     }
+// }
+// getPosts();
+//===========================================================================================================================================================================
 
 async function getPosts() {
 
-    try{
-        const data = await fetch('https://dummyjson.com/posts');
-
-        if(!data.ok){
-            console.log('Error server');
-        }
+    try {
+        const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
 
         const dataPosts = await data.json();
 
-        dataPosts.posts.forEach((post) => {
-            console.log(post);
-            // posts.textContent += post.id + post.title + post.body + post.tags + post.reactions + post.views + post.userId;
-            posts.innerHTML += post.id + post.title + post.body + post.tags + post.reactions.likes + post.reactions.dislikes + post.views + post.userId;
-        })
-    }catch(err){
+        console.log(dataPosts);
+    } catch (err) {
         console.log(err);
     }
 }
+
 getPosts();
+
+
+//№1
+async function getTeam() {
+    try {
+        const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+
+        const dataTeam = await data.json();
+
+        return dataTeam;
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+const cards = document.querySelector('.testimonials__cards');
+
+getTeam().then(team => {
+    renderTeam(team);
+});
+
+ function renderTeam(team) {
+
+    cards.innerHTML = team.map(function (person) {
+        return `
+<div class="testimonials__card">
+    <div class="testimonials__card-top">
+        <img class="testimonials__card-img" src="${person.avatar}" alt="avatar" />
+        <div class="testimonials__card-text">
+            <h3 class="testimonials__card-title">${person.title}</h3>
+            <p class="testimonials__card-description">${person.tags[0]}</p>
+        </div>
+    </div>
+    <div class="testimonials__card-bottom">${person.about}</div>
+</div>
+`
+    }).join('\n');
+
+}
+
+
+
 
 
 

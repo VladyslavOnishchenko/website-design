@@ -1,0 +1,89 @@
+@use "../abstracts/index" as *;
+
+.testimonials {
+  background-color: $black;
+
+  &__wrapper {
+    padding-top: 80px;
+    padding-bottom: 96px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 56px;
+  }
+
+  &__title {
+    @extend %section__title;
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 24px;
+
+  }
+
+  &__arrow-left {
+    padding: 20px;
+    //margin: 20px;
+    border: 1px solid $color-accent;
+    border-radius: 4px;
+
+  }
+
+  &__arrow-right {
+    transform: scaleX(-1);
+    padding: 20px;
+    //margin: 20px;
+    border: 1px solid $color-accent;
+    border-radius: 4px;
+  }
+
+  &__cards {
+    display: flex;
+    overflow-x: auto;
+    gap: 24px;
+
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid $steel;
+    padding: 24px;
+    gap: 16px;
+
+
+    &-top {
+      display: flex;
+      gap: 8px;
+    }
+
+    &-img {
+      border-radius: 100%;
+      width: 48px;
+      height: 48px;
+    }
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &-title {
+      @extend %section__title;
+      font-size: 16px;
+    }
+
+    &-description {
+      @extend %section__description;
+      font-size: 16px;
+
+    }
+  }
+
+}
