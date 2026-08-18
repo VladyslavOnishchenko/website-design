@@ -10,7 +10,7 @@ burger.addEventListener('click', () => {
 })
 
 document.addEventListener('click', (event) => {
-    console.log(event.target);
+    // console.log(event.target);
     if (!menu.contains(event.target) && !burger.contains(event.target)) {
         burger.classList.remove('header__burger--open');
         menu.classList.remove('header__menu--open');

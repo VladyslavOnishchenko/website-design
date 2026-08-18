@@ -639,7 +639,7 @@ getTeam().then(team => {
     renderTeam(team);
 });
 
- function renderTeam(team) {
+function renderTeam(team) {
 
     cards.innerHTML = team.map(function (person) {
         return `
@@ -657,6 +657,32 @@ getTeam().then(team => {
     }).join('\n');
 
 }
+
+
+//№2
+const panel = document.querySelectorAll('.tabs__panel');
+const button = document.querySelectorAll('.tabs__button');
+
+button.forEach(oneButton => {
+    oneButton.addEventListener('click', () => {
+        console.log(oneButton.dataset.tab);
+
+
+        const activePanel = document.querySelector(`[data-panel = "${oneButton.dataset.tab}" ]`)
+        const wasActive = activePanel.classList.contains('tabs__panel--active');
+
+        panel.forEach((onePanel) => {
+            onePanel.classList.remove('tabs__panel--active');
+        })
+
+
+
+        if (!wasActive) {
+            activePanel.classList.add('tabs__panel--active');
+        }
+        console.log(activePanel)
+    })
+})
 
 
 

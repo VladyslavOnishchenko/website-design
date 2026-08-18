@@ -46,6 +46,7 @@
     display: flex;
     overflow-x: auto;
     gap: 24px;
+    width: 100%;
 
   }
 
@@ -55,6 +56,7 @@
     border: 1px solid $steel;
     padding: 24px;
     gap: 16px;
+    min-width: 250px;
 
 
     &-top {
@@ -83,6 +85,11 @@
       @extend %section__description;
       font-size: 16px;
 
+    }
+
+    &-bottom{
+      @extend %section__title;
+      font-size: 16px;
     }
   }
 

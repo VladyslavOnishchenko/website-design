@@ -1,0 +1,12 @@
+@use "../abstracts/index" as *;
+
+.tabs{
+
+  &__panel{
+    display: none;
+
+    &--active{
+      display: block;
+    }
+  }
+}
