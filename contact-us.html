@@ -17,7 +17,7 @@
     <header class="header">
         <div class="container header__container">
             <div class="header__wrapper">
-                <a href="/" class="header__logo">
+                <a href="index.html" class="header__logo">
                     <img src="assets/images/header/header-logo.png" alt="Shadient.co">
                 </a>
 
@@ -27,6 +27,7 @@
                             <li class="header__list-item"><a href="/" class="header__link">Company</a></li>
                             <li class="header__list-item"><a href="/" class="header__link">Services</a></li>
                             <li class="header__list-item"><a href="/" class="header__link">Resources</a></li>
+                            <li class="header__list-item"><a href="contact-us.html" class="header__link">Contact Us</a></li>
                         </ul>
                     </nav>
                     <button class="button button--secondary header__button">Contact</button>
@@ -45,6 +46,10 @@
     <section class="contact-us">
         <div class="container contact-us__container">
             <div class="contact-us__wrapper">
+                <div class="contact-us__text">
+                    <h1 class="contact-us__title">Let's talk</h1>
+                    <p class="contact-us__description">Leave your email and we'll get back to you within 24 hours</p>
+                </div>
                 <div class="contact-us__form">
                     <form id="contact-us-form" class="form">
                         <label for="contact-us-email">
@@ -56,7 +61,8 @@
                             <input class="input" name="name" type="text" placeholder="your name" id="contact-us-name"/>
                         </label>
                         <label for="contact-us-submit">
-                            <input class="input" name="submit" type="submit" id="contact-us-submit"/>
+<!--                            <input class="input" name="submit" type="submit" id="contact-us-submit"/>-->
+                            <button class="button contact-us__button input" name="submit" type="submit" id="contact-us-submit">Submit</button>
                         </label>
                     </form>
                 </div>

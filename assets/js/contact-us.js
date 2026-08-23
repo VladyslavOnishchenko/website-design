@@ -1,9 +1,8 @@
-
 async function getData() {
     const form = document.getElementById('contact-us-form');
 
     if (!form) return;
-    form.addEventListener('submit', async(e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const formData = new FormData(form);
@@ -12,15 +11,20 @@ async function getData() {
         const data = {email: email, name: name};
 
         if (!email || !name) {
-            console.log('Заполните все поля 😡');
+            console.log('Please fill in all the fields 😡');
             return;
         }
 
-        const response = await sendData(data);
-        console.log(response);
+        try {
+            const response = await sendData(data);
+            console.log(response.message);
+        }catch(err) {
+            console.error(err.message)
+        }
 
     })
 }
+
 getData();
 
 
@@ -35,31 +39,35 @@ async function sendData(data) {
 
         if (!response.ok) {
             let serverMessage = '';
-            try{
+            try {
                 const errorData = await response.json();
-                console.log(errorData);
-            }catch{}
+                serverMessage = errorData.message;
+
+            } catch {
+                //
+            }
 
 
             let message;
 
-            if (response.status === 400){
-                message = 'Кривые данные 🙄';
-            } else if (response.status === 409){
-                message = 'Уже существует 😰';
-            } else if (response.status === 500){
-                message = 'Сервер сломался 🙁';
+            if (response.status === 400) {
+                message = 'Data with errors 🙄';
+            } else if (response.status === 409 || response.status === 422) {
+                message = 'It already exists 😰';
+            } else if (response.status === 500) {
+                message = 'The server has broken down 🙁';
             } else {
                 message = 'Error 🤷‍♂️';
             }
 
-            throw new Error (`${message} - ${response.status}`);
+            throw new Error(`${message} - ${response.status} : ${serverMessage}`);
         }
 
 
-        return response.json();
+        return await response.json();
 
     } catch (e) {
         console.error(e);
+        throw e;
     }
 }
