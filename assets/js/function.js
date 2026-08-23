@@ -602,87 +602,187 @@
 // }
 // getPosts();
 //===========================================================================================================================================================================
+//
 
-async function getPosts() {
 
+// async function getPosts() {
+//
+//     try {
+//         const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+//
+//         const dataPosts = await data.json();
+//
+//         console.log(dataPosts);
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// getPosts();
+//
+//
+// //№1
+// async function getTeam() {
+//     try {
+//         const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+//
+//         const dataTeam = await data.json();
+//
+//         return dataTeam;
+//
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// const cards = document.querySelector('.testimonials__cards');
+//
+// getTeam().then(team => {
+//     renderTeam(team);
+// });
+//
+// function renderTeam(team) {
+//
+//     cards.innerHTML = team.map(function (person) {
+//         return `
+// <div class="testimonials__card">
+//     <div class="testimonials__card-top">
+//         <img class="testimonials__card-img" src="${person.avatar}" alt="avatar" />
+//         <div class="testimonials__card-text">
+//             <h3 class="testimonials__card-title">${person.title}</h3>
+//             <p class="testimonials__card-description">${person.tags[0]}</p>
+//         </div>
+//     </div>
+//     <div class="testimonials__card-bottom">${person.about}</div>
+// </div>
+// `
+//     }).join('\n');
+//
+// }
+//
+//
+// //№2
+// const panel = document.querySelectorAll('.tabs__panel');
+// const button = document.querySelectorAll('.tabs__button');
+//
+// button.forEach(oneButton => {
+//     oneButton.addEventListener('click', () => {
+//         console.log(oneButton.dataset.tab);
+//
+//
+//         const activePanel = document.querySelector(`[data-panel = "${oneButton.dataset.tab}" ]`)
+//         const wasActive = activePanel.classList.contains('tabs__panel--active');
+//
+//         panel.forEach((onePanel) => {
+//             onePanel.classList.remove('tabs__panel--active');
+//         })
+//
+//
+//
+//         if (!wasActive) {
+//             activePanel.classList.add('tabs__panel--active');
+//         }
+//         console.log(activePanel)
+//     })
+// })
+//=========================================================================================================================================
+
+//
+// async function getData() {
+//     const user = {
+//         name: "John",
+//         email: "ghjdskd@gmail.com"
+//     };
+//
+//     try {
+//         const data = await fetch('http://194.61.53.73/api/v1/user/create', {
+//             method: 'POST',
+//             body: JSON.stringify(user),
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 'Accept': 'application/json',
+//             },
+//         })
+//
+//         const dataJson = await data.json()
+//         console.log(dataJson);
+//
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// getData();
+//=======================================================================================================================================================
+
+async function getWeather() {
     try {
-        const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+        const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=48.72&longitude=21.26&current=temperature_2m,weather_code');
 
-        const dataPosts = await data.json();
+        const dataWeather = await data.json();
+        console.log(dataWeather);
+    } catch (err) {
+        console.log(err);
+    }
+}
+getWeather()
 
-        console.log(dataPosts);
+
+
+
+
+async function getCoin() {
+    try {
+        const data = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            });
+
     } catch (err) {
         console.log(err);
     }
 }
 
-getPosts();
+getCoin()
 
 
-//№1
-async function getTeam() {
+async function getUsers() {
     try {
-        const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+        const data = await fetch('https://randomuser.me/api/?results=3');
 
-        const dataTeam = await data.json();
-
-        return dataTeam;
+        const dataUser = await data.json();
+        console.log(dataUser);
 
     } catch (err) {
         console.log(err);
     }
 }
 
-const cards = document.querySelector('.testimonials__cards');
-
-getTeam().then(team => {
-    renderTeam(team);
-});
-
-function renderTeam(team) {
-
-    cards.innerHTML = team.map(function (person) {
-        return `
-<div class="testimonials__card">
-    <div class="testimonials__card-top">
-        <img class="testimonials__card-img" src="${person.avatar}" alt="avatar" />
-        <div class="testimonials__card-text">
-            <h3 class="testimonials__card-title">${person.title}</h3>
-            <p class="testimonials__card-description">${person.tags[0]}</p>
-        </div>
-    </div>
-    <div class="testimonials__card-bottom">${person.about}</div>
-</div>
-`
-    }).join('\n');
-
-}
-
-
-//№2
-const panel = document.querySelectorAll('.tabs__panel');
-const button = document.querySelectorAll('.tabs__button');
-
-button.forEach(oneButton => {
-    oneButton.addEventListener('click', () => {
-        console.log(oneButton.dataset.tab);
-
-
-        const activePanel = document.querySelector(`[data-panel = "${oneButton.dataset.tab}" ]`)
-        const wasActive = activePanel.classList.contains('tabs__panel--active');
-
-        panel.forEach((onePanel) => {
-            onePanel.classList.remove('tabs__panel--active');
-        })
+getUsers()
 
 
 
-        if (!wasActive) {
-            activePanel.classList.add('tabs__panel--active');
-        }
-        console.log(activePanel)
-    })
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

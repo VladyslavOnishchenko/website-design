@@ -1,0 +1,52 @@
+@use "../abstracts/index" as *;
+
+.contact-us{
+  background-image:
+          linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+          linear-gradient(0deg,  rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 64px 64px;
+  position: relative;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    //почему если убрать то появляеться сетка и маржин работает по другому
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 100px;
+    margin-bottom: 210px;
+
+  }
+
+  &::after {
+    @include blob($orange);
+    width: 352px;
+    height: 597px;
+    z-index: -10;
+    bottom: -180px;
+    left: -150px;
+    rotate: (90deg);
+  }
+
+  &::before {
+    @include blob($purple);
+    width: 392px;
+    height: 597px;
+    z-index: -10;
+    top: -190px;
+    right: -90px;
+    rotate: (-25deg);
+  }
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+  }
+}
+
