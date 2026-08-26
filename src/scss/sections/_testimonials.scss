@@ -12,18 +12,34 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 56px;
+    @media(max-width: 380px) {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 36px;
+      align-items: center;
+    }
   }
 
   &__title {
     @extend %section__title;
     display: flex;
     align-items: center;
+    @media(max-width: 450px) {
+      font-size: 14px;
+    }
   }
 
   &__buttons {
     display: flex;
     gap: 24px;
-
+    @media(max-width: 550px) {
+      display: flex;
+      gap: 20px;
+    }
+    @media(max-width: 450px) {
+      display: flex;
+      gap: 18px;
+    }
   }
 
   &__arrow-left {
@@ -32,6 +48,12 @@
     border: 1px solid $color-accent;
     border-radius: 4px;
     @include hover;
+    @media(max-width: 550px) {
+      padding: 18px;
+    }
+    @media(max-width: 450px) {
+      padding: 16px;
+    }
   }
 
   &__arrow-right {
@@ -41,6 +63,22 @@
     border: 1px solid $color-accent;
     border-radius: 4px;
     @include hover;
+    @media(max-width: 550px) {
+      padding: 18px;
+    }
+    @media(max-width: 450px) {
+      padding: 16px;
+    }
+  }
+
+  &__bottom {
+    @media(max-width: 860px) {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    @media(max-width: 620px) {
+      padding: 0 36px;
+    }
   }
 
   .swiper {
@@ -51,6 +89,12 @@
 
   }
 
+  .swiper-wrapper {
+    @media(max-width: 850px) {
+
+    }
+  }
+
   .swiper-slide {
     display: flex;
     flex-direction: column;
@@ -58,10 +102,13 @@
     padding: 24px;
     gap: 16px;
     min-width: 250px;
-    max-width: 300px;
+    //max-width: 300px;
+    @media(max-width: 400px) {
+      min-width: 200px;
+    }
   }
 
-  .swiper-button-disabled{
+  .swiper-button-disabled {
     @include hover;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(236, 176, 0, 0.6);
