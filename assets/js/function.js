@@ -602,13 +602,13 @@
 // }
 // getPosts();
 //===========================================================================================================================================================================
+
 //
-
-
+//
 // async function getPosts() {
 //
 //     try {
-//         const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+//         const data = await fetch("https://dummyjson.com/users");
 //
 //         const dataPosts = await data.json();
 //
@@ -624,7 +624,7 @@
 // //№1
 // async function getTeam() {
 //     try {
-//         const data = await fetch("https://6a8028d5ec7a640e63ab9ac3.mockapi.io/api/v1/products");
+//         const data = await fetch("https://dummyjson.com/users");
 //
 //         const dataTeam = await data.json();
 //
@@ -647,20 +647,20 @@
 //         return `
 // <div class="testimonials__card">
 //     <div class="testimonials__card-top">
-//         <img class="testimonials__card-img" src="${person.avatar}" alt="avatar" />
+//         <img class="testimonials__card-img" src="${person.image}" alt="avatar" />
 //         <div class="testimonials__card-text">
-//             <h3 class="testimonials__card-title">${person.title}</h3>
-//             <p class="testimonials__card-description">${person.tags[0]}</p>
+//             <h3 class="testimonials__card-title">${person.firstName}</h3>
+//             <p class="testimonials__card-description">${person.username}</p>
 //         </div>
 //     </div>
-//     <div class="testimonials__card-bottom">${person.about}</div>
+//     <div class="testimonials__card-bottom">${person.university}</div>
 // </div>
 // `
 //     }).join('\n');
 //
 // }
 //
-//
+
 // //№2
 // const panel = document.querySelectorAll('.tabs__panel');
 // const button = document.querySelectorAll('.tabs__button');
@@ -714,53 +714,53 @@
 //
 // getData();
 //=======================================================================================================================================================
-
-async function getWeather() {
-    try {
-        const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=48.72&longitude=21.26&current=temperature_2m,weather_code');
-
-        const dataWeather = await data.json();
-        console.log(dataWeather);
-    } catch (err) {
-        console.log(err);
-    }
-}
-getWeather()
-
-
-
-
-
-async function getCoin() {
-    try {
-        const data = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd')
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            });
-
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-getCoin()
-
-
-async function getUsers() {
-    try {
-        const data = await fetch('https://randomuser.me/api/?results=3');
-
-        const dataUser = await data.json();
-        console.log(dataUser);
-
-    } catch (err) {
-        console.log(err);
-    }
-}
-
-getUsers()
-
+//
+// async function getWeather() {
+//     try {
+//         const data = await fetch('https://api.open-meteo.com/v1/forecast?latitude=48.72&longitude=21.26&current=temperature_2m,weather_code');
+//
+//         const dataWeather = await data.json();
+//         console.log(dataWeather);
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+// getWeather()
+//
+//
+//
+//
+//
+// async function getCoin() {
+//     try {
+//         const data = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=usd')
+//             .then(res => res.json())
+//             .then(data => {
+//                 console.log(data);
+//             });
+//
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// getCoin()
+//
+//
+// async function getUsers() {
+//     try {
+//         const data = await fetch('https://randomuser.me/api/?results=3');
+//
+//         const dataUser = await data.json();
+//         console.log(dataUser);
+//
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+//
+// getUsers()
+//
 
 
 

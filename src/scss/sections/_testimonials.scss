@@ -31,7 +31,7 @@
     //margin: 20px;
     border: 1px solid $color-accent;
     border-radius: 4px;
-
+    @include hover;
   }
 
   &__arrow-right {
@@ -40,57 +40,66 @@
     //margin: 20px;
     border: 1px solid $color-accent;
     border-radius: 4px;
+    @include hover;
   }
 
-  &__cards {
-    display: flex;
-    overflow-x: auto;
+  .swiper {
+    //display: flex;
+    //overflow-x: auto;
     gap: 24px;
     width: 100%;
 
   }
 
-  &__card {
+  .swiper-slide {
     display: flex;
     flex-direction: column;
     border: 1px solid $steel;
     padding: 24px;
     gap: 16px;
     min-width: 250px;
-
-
-    &-top {
-      display: flex;
-      gap: 8px;
-    }
-
-    &-img {
-      border-radius: 100%;
-      width: 48px;
-      height: 48px;
-    }
-
-    &-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    &-title {
-      @extend %section__title;
-      font-size: 16px;
-    }
-
-    &-description {
-      @extend %section__description;
-      font-size: 16px;
-
-    }
-
-    &-bottom{
-      @extend %section__title;
-      font-size: 16px;
-    }
+    max-width: 300px;
   }
+
+  .swiper-button-disabled{
+    @include hover;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(236, 176, 0, 0.6);
+    filter: blur(0.4px);
+  }
+
+  &__card-top {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__card-img {
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__card-title {
+    @extend %section__title;
+    font-size: 16px;
+  }
+
+  &__card-description {
+    @extend %section__description;
+    font-size: 16px;
+
+  }
+
+  &__card-bottom {
+    @extend %section__title;
+    font-size: 16px;
+  }
+
 
 }
