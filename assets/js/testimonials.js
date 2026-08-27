@@ -52,28 +52,32 @@ function renderTeam(team) {
 `
     }).join('\n');
 
+
+    new Swiper('.swiper', {
+
+        spaceBetween: 24,
+        navigation: {
+            nextEl: '.testimonials__arrow-right',
+            prevEl: '.testimonials__arrow-left',
+        },
+        breakpoints: {
+            620: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+            },
+            860: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+            },
+            1150: {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+            },
+        },
+    });
+
+
 }
 
-new Swiper('.swiper', {
 
-    spaceBetween: 24,
-    navigation: {
-        nextEl: '.testimonials__arrow-right',
-        prevEl: '.testimonials__arrow-left',
-    },
-    breakpoints: {
-        620:{
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-        },
-        860:{
-            slidesPerView: 3,
-            slidesPerGroup: 3,
-        },
-        1150:{
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-        },
-    },
-});
 

@@ -174,7 +174,6 @@
     }
 
     &-description {
-      //@extend %section__description;
       font-size: 16px;
       color: #728095;
       @media(max-width: 950px) {
@@ -182,13 +181,6 @@
       }
     }
 
-    //&-arrow{
-    //  transition: color 0.3s ease;
-    //  &:hover path{
-    //    fill: $purple;
-    //    border-bottom: $purple;
-    //  }
-    //}?????
   }
 
 }

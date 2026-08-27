@@ -48,6 +48,7 @@
     border: 1px solid $color-accent;
     border-radius: 4px;
     @include hover;
+    @include press;
     @media(max-width: 550px) {
       padding: 18px;
     }
@@ -57,12 +58,14 @@
   }
 
   &__arrow-right {
-    transform: scaleX(-1);
+    //transform: scaleX(-1);
+    rotate: 180deg;
     padding: 20px;
     //margin: 20px;
     border: 1px solid $color-accent;
     border-radius: 4px;
     @include hover;
+    @include press;
     @media(max-width: 550px) {
       padding: 18px;
     }
