@@ -1,3 +1,5 @@
+const apiBase = 'http://194.61.53.73/api/v1/';
+
 async function getData() {
     const form = document.getElementById('contact-us-form');
 
@@ -16,9 +18,9 @@ async function getData() {
         }
 
         try {
-            const response = await sendData(data);
+            const response = await sendData('user/create', data);
             console.log(response.message);
-        }catch(err) {
+        } catch (err) {
             console.error(err.message)
         }
 
@@ -28,10 +30,10 @@ async function getData() {
 getData();
 
 
-async function sendData(data) {
+async function sendData(endpoint, data, method = 'POST') {
     try {
-        const response = await fetch('http://194.61.53.73/api/v1/user/create', {
-            method: 'POST',
+        const response = await fetch(`${apiBase}${endpoint}`, {
+            method: method,
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data),
         })
@@ -44,20 +46,26 @@ async function sendData(data) {
                 serverMessage = errorData.message;
 
             } catch {
-                //
+                //There’s no need to display anything here
             }
 
 
             let message;
 
-            if (response.status === 400) {
-                message = 'Data with errors 🙄';
-            } else if (response.status === 409 || response.status === 422) {
-                message = 'It already exists 😰';
-            } else if (response.status === 500) {
-                message = 'The server has broken down 🙁';
-            } else {
-                message = 'Error 🤷‍♂️';
+            switch (response.status) {
+                case 400:
+                    message = 'Data with errors 🙄';
+                    break;
+                case 409:
+                case 422:
+                    message = 'It already exists 😰';
+                    break;
+                case 500:
+                    message = 'The server has broken down 🙁';
+                    break;
+                default:
+                    message = 'Error 🤷‍♂️';
+                    break;
             }
 
             throw new Error(`${message} - ${response.status} : ${serverMessage}`);
