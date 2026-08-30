@@ -4,8 +4,6 @@
   background-color: $black-warm;
 
   &__wrapper {
-    //display: grid;
-    //grid-template-columns: repeat(2, 1fr );
     display: flex;
     justify-content: space-between;
     padding-top: 80px;
@@ -57,23 +55,13 @@
   }
 
   &__cards {
-    //display: grid;
     display: flex;
-    //flex-direction: column;
-    //column-count: 2;
-    //column-gap: 20px;
-    //grid-template-columns: repeat(2, 1fr);
-    //flex-wrap: wrap;
-    //align-items: start;
-    //justify-content: center;
     gap: 32px;
     align-items: start;
     width: 62%;
     @media(max-width: 700px) {
       flex-direction: column;
       width: 100%;
-      //flex-wrap: wrap;
-      //overflow-x: auto;
     }
 
     &-left {
@@ -114,7 +102,6 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    //width: 380px;
     width: 100%;
     @media(max-width: 700px) {
       flex-shrink: 0;
@@ -165,10 +152,7 @@
       transition: all 0.9s;
       @include hover {
         transition: color 0.9s;
-        //text-decoration: underline;
-        //text-decoration-color: $steel;
         border-bottom: 1px solid $steel;
-        //padding-bottom: 1px;
         gap: 8px;
       }
     }

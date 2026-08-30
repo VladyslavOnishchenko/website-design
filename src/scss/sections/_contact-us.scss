@@ -19,7 +19,6 @@
     margin-top: 100px;
     margin-bottom: 210px;
     flex-direction: column;
-
   }
 
   &::after {
@@ -42,10 +41,25 @@
     rotate: (-25deg);
   }
 
+  &__content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media(max-width: 750px) {
+      padding: 0 24px;
+    }
+
+    &--hidden{
+      display: none
+    }
+  }
+
   &__text {
     display: flex;
     flex-direction: column;
     gap: 6px;
+    align-items: center;
   }
 
   &__title{
@@ -56,10 +70,15 @@
   &__description {
     @extend %section__description;
     font-size: 16px;
+    text-align: center;
+    width: 90%;
+    @media(max-width: 750px) {
+      width: 85%;
+    }
   }
 
 
-  .form {
+  &__form {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -67,6 +86,8 @@
       color: $color-text-muted;
     }
   }
+
+
 
   &__button {
     background-color: $color-accent;

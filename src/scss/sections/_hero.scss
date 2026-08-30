@@ -63,7 +63,7 @@
     letter-spacing: 0.08em;
 
     &-accent {
-      background: linear-gradient(45deg, #9F8CED 0%, #FA7C0B 18%, #9DE8EE 100%);
+      background: linear-gradient(45deg, #9F8CED 0%, #FA7C0B 18%, $tiffany 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -85,9 +85,6 @@
       width: 100%;
       font-size: 14px;
       padding-right: 30px;
-      //padding: 0 60px 0 0;
-      //justify-content: center;
-      //align-items: center;
     }
   }
 
@@ -98,7 +95,6 @@
     margin-top: 16px;
     @media(max-width: 850px){
       width: 100%;
-      //padding: 0 80px 0 0;
       padding-right: 50px;
       justify-content: center;
       align-items: center;

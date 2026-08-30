@@ -2,6 +2,9 @@ const apiBase = 'http://194.61.53.73/api/v1/';
 
 async function getData() {
     const form = document.getElementById('contact-us-form');
+    const popup = document.querySelector('.popup');
+    const formBlock = document.querySelector('.contact-us__content');
+    const buttonClose = document.querySelector('.popup__button');
 
     if (!form) return;
     form.addEventListener('submit', async (e) => {
@@ -20,6 +23,14 @@ async function getData() {
         try {
             const response = await sendData('user/create', data);
             console.log(response.message);
+            // popup.style.display = 'block';
+            popup.classList.toggle('popup--active');
+            formBlock.classList.toggle('contact-us__content--hidden');
+            buttonClose.addEventListener('click', () =>{
+                formBlock.classList.remove('contact-us__content--hidden');
+                popup.classList.remove('popup--active');
+            })
+
         } catch (err) {
             console.error(err.message)
         }

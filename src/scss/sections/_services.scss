@@ -41,8 +41,6 @@
   }
 
   &__cards{
-    //display: flex;
-    //flex-direction: column;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     gap: 40px;
