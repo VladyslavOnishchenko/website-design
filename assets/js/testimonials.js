@@ -27,7 +27,6 @@ async function getTeam() {
     }
 }
 
-// const cards = document.querySelector('.testimonials__cards');
 
 getTeam().then(team => {
     renderTeam(team);
@@ -35,6 +34,7 @@ getTeam().then(team => {
 
 function renderTeam(team) {
     const cards = document.querySelector('.swiper-wrapper');
+
 
 
     cards.innerHTML = team.map(function (person) {
@@ -53,8 +53,7 @@ function renderTeam(team) {
     }).join('\n');
 
 
-    new Swiper('.swiper', {
-
+    const swiper = new Swiper('.swiper', {
         spaceBetween: 24,
         navigation: {
             nextEl: '.testimonials__arrow-right',
@@ -74,9 +73,19 @@ function renderTeam(team) {
                 slidesPerGroup: 4,
             },
         },
+        on: {
+            slideChange: function () {
+                console.log(this.activeIndex);
+                localStorage.setItem('testimonialsSlide', this.activeIndex);
+
+            }
+        },
     });
+    const saved = localStorage.getItem('testimonialsSlide');
 
-
+    if (saved !== null) {
+        swiper.slideTo(parseInt(saved));
+    }
 }
 
 

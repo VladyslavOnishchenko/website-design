@@ -6,6 +6,13 @@ async function getData() {
     const formBlock = document.querySelector('.contact-us__content');
     const buttonClose = document.querySelector('.popup__button');
 
+    if (!buttonClose) return;
+
+    buttonClose.addEventListener('click', () =>{
+        formBlock.classList.remove('contact-us__content--hidden');
+        popup.classList.remove('popup--active');
+    })
+
     if (!form) return;
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -26,10 +33,10 @@ async function getData() {
             // popup.style.display = 'block';
             popup.classList.toggle('popup--active');
             formBlock.classList.toggle('contact-us__content--hidden');
-            buttonClose.addEventListener('click', () =>{
-                formBlock.classList.remove('contact-us__content--hidden');
-                popup.classList.remove('popup--active');
-            })
+            // buttonClose.addEventListener('click', () =>{
+            //     formBlock.classList.remove('contact-us__content--hidden');
+            //     popup.classList.remove('popup--active');
+            // })
 
         } catch (err) {
             console.error(err.message)
