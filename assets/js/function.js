@@ -762,6 +762,144 @@
 // getUsers()
 //
 
+let nums = [1,2,31,400,5,-6,47];
+let lines = ["Bob","Charlotte", "John", "Sophia", "Jordan", "Piter", "William", "apple", "banana"];
+let users = [
+    {id: 1, name: "John", age: 9},
+    {id: 2, name: "Sophia", age: 23},
+    {id: 3, name: "Jordan", age: 52},
+    {id: 4, name: "Piter", age: 94},
+    {id: 5, name: "Max", age: 12},
+    {id: 6, name: "John", age: 14},
+];
+
+
+
+let plusFive = nums.map((num) =>{
+    return num + 5;
+});
+console.log(plusFive);
+
+
+
+let multiplyByTwo = nums.map((num) =>{
+    return num * 2;
+})
+console.log(multiplyByTwo);
+
+
+
+let addQ = lines.map((line) =>{
+    return line + 'q';
+})
+console.log(addQ);
+
+
+
+let addExclamationMark = lines.map((line) =>{
+    return line + '!';
+})
+console.log(addExclamationMark);
+
+
+
+let wordLength = lines.map((line) =>{
+    return line.length;
+})
+console.log(wordLength);
+
+
+
+let oneLine = lines.join('')
+console.log(oneLine);
+
+
+
+let evenNumbers = nums.filter((num) =>{
+    return num % 2 === 0;
+})
+console.log(evenNumbers);
+
+
+
+
+let oddNumbers = nums.filter((num) =>{
+    return num % 2 !== 0;
+})
+console.log(oddNumbers);
+
+
+
+
+let moreThanTen = nums.filter((num) =>{
+    if( typeof num !== "number" ){
+        return false;
+    }
+    return num > 10;
+})
+console.log(moreThanTen);
+
+
+
+let sum = 0;
+nums.forEach((num) =>{
+    sum += num;
+});
+console.log(sum);
+
+
+
+let apple = 0;
+lines.forEach((line) =>{
+    if(line === "apple"){
+        apple++;
+    }
+})
+console.log(apple);
+
+
+
+
+let appleBanana = lines.filter((line) =>{
+    return line === "apple" || line === "banana";
+})
+console.log(appleBanana);
+
+
+
+
+let namesOnly = users.map((user) =>{
+    return user.name
+})
+console.log(namesOnly);
+
+
+
+let ofLegalAge = users.filter((user) =>{
+    return user.age >= 18;
+})
+console.log(ofLegalAge);
+
+
+
+function multiplyByThree(nums){
+  return nums.map((num) => num * 3)
+}
+console.log(multiplyByThree(nums));
+
+
+
+function acceptsWords(lines){
+    let result = [];
+    lines.map((line) =>{
+        result.push(line + "_test");
+    })
+    return result;
+}
+console.log(acceptsWords(lines));
+
+
+
 
 
 
