@@ -9,21 +9,20 @@ async function getWeather() {
         const temp = data.current.temperature_2m;
         const unit = data.current_units.temperature_2m;
 
-        renderTeam(temp, unit);
-
-        console.log(temp, unit);
-
+        return [temp, unit];
         // return data.current
-    }catch(err) {
+    } catch (err) {
         console.log(err)
     }
 }
+
 getWeather();
 
 
-function renderTeam(weather, weather2) {
-   const card = document.getElementById('weather-temp');
-   card.textContent = weather && weather2;
+async function renderTeam() {
+    const card = document.getElementById('weather-temp');
+    const [temp, unit] = await getWeather();
+    card.textContent = temp && unit;
 }
 //должна быть одно функция которая инициализирует запрос на погоду (реквест)
 
