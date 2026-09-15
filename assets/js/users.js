@@ -17,12 +17,10 @@ async function usersRender() {
 
     const users = await getUsers();
 
-    if(!users.length) return;
-
-    console.log(users);
+    if (!users.length) return;
 
     const card = document.querySelector('.users');
-    users.forEach(({id, email}) =>{
+    users.forEach(({id, email}) => {
 
         card.innerHTML += `
         <div class="users__card">
@@ -33,16 +31,19 @@ async function usersRender() {
 
 }
 
-usersRender();
 
+function searchUsers() {
+    const input = document.getElementById('input-user-search');
 
- function searchUsers() {
-    const input = document.getElementById('search-users');
-
+    if (!input) return;
 
     input.addEventListener('input', (e) => {
-      console.log(e);
-    })
+        const search = e.target.value;
+
+        console.log(search)
+    });
 }
 
-searchUsers();
+document.addEventListener('DOMContentLoaded', () => {
+    searchUsers();
+});
