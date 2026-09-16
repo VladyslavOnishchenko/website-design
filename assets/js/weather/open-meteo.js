@@ -1,3 +1,5 @@
+import {fetchData, getDayText} from './api.js';
+
 const weatherCodes = {
     0: 'Clear sky',
     1: 'Mainly clear',
@@ -30,14 +32,14 @@ const weatherCodes = {
 }
 
 
-async function fetchData(url){
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-}
+// async function fetchData(url){
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     return data;
+// }
 
 
-function parseWeather(data){
+function parseOpenMeteo(data) {
     const temp = data.current.temperature_2m;
     const tempUnit = data.current_units.temperature_2m;
     const isDay = data.current.is_day;
@@ -57,17 +59,17 @@ function parseWeather(data){
 }
 
 
-function getWeatherText(weatherCode){
+function getWeatherText(weatherCode) {
     return weatherCodes[weatherCode] || 'Unknown';
 }
 
 
-function getDayText(isDay){
-    return isDay === 1 ? "Day" : "Night";
-}
+// function getDayText(isDay){
+//     return isDay === 1 ? "Day" : "Night";
+// }
 
 
-function renderWeather(weather) {
+function renderOpenMeteo(weather) {
     const tempEl = document.getElementById('weather-temp');
     const dayEl = document.getElementById('weather-is-day');
     const weatherCodeEl = document.getElementById('weather-weather-code');
@@ -80,20 +82,18 @@ function renderWeather(weather) {
 }
 
 
-async function initWeather(){
-    try{
+export async function initOpenMeteo() {
+    try {
         const data = await fetchData('https://api.open-meteo.com/v1/forecast?latitude=48.7144&longitude=21.258&current=temperature_2m,weather_code,rain,is_day');
-        const weather = parseWeather(data);
-        renderWeather(weather);
+        const weather = parseOpenMeteo(data);
+        renderOpenMeteo(weather);
         console.log(data)
-    }catch(err){
+    } catch (err) {
         console.error(err);
     }
 }
 
-initWeather();
-
-
+// initOpenMeteo();
 
 
 //должна быть одно функция которая инициализирует запрос на погоду (реквест)

@@ -47,18 +47,40 @@
         <div class="container weather__container">
             <div class="weather__wrapper">
                 <div class="weather__content">
-                    <h1>Weather</h1>
-                    <div class="weather__item">
-                        <p>Temperature: <span id="weather-temp"></span></p>
+                    <div class="weather__text">
+                        <h1 class="weather__title">Weather</h1>
+                        <p class="weather__description">The data is received in real time</p>
                     </div>
-                    <div class="weather__item">
-                        <p>Day or Night: <span id="weather-is-day"></span></p>
+                    <div class="weather__api weather__api--weather-api">
+                        <div class="weather__item">
+                            <p>Region: <span id="weather-region"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Country: <span id="weather-country"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Local time: <span id="weather-localtime"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Condition: <span id="weather-condition-text"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Weather: <img id="weather-icon" alt="" src=""></p>
+                        </div>
                     </div>
-                    <div class="weather__item">
-                        <p>Rain: <span id="weather-rain"></span></p>
-                    </div>
-                    <div class="weather__item">
-                        <p>Weather type: <span id="weather-weather-code"></span></p>
+                    <div class="weather__api weather__api--open-meteo">
+                        <div class="weather__item">
+                            <p>Temperature: <span id="weather-temp"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Day or Night: <span id="weather-is-day"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Rain: <span id="weather-rain"></span></p>
+                        </div>
+                        <div class="weather__item">
+                            <p>Weather type: <span id="weather-weather-code"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -117,8 +139,11 @@
 <script src="assets/js/burger.js"></script>
 <script src="assets/js/counter.js"></script>
 <script src="assets/js/function.js"></script>
-<!--<script src="assets/js/contact-us.js"></script>-->
-<script src="assets/js/weather.js"></script>
+
+<!--<script src="assets/js/weather/api.js"></script>-->
+<!--<script src="assets/js/weather/open-meteo.js"></script>-->
+<!--<script src="assets/js/weather/weather-api.js"></script>-->
+<script type="module" src="assets/js/weather/main.js"></script>
 
 </body>
 </html>
