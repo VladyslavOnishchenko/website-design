@@ -1,5 +1,4 @@
 import {data} from './data.js';
-//Это у нас пришло с фетча
 
 
 //Здесь ты по инпуту ищешь
@@ -22,7 +21,10 @@ function filterInStock(){
 
 function filterByPrice(minPrice, maxPrice){
     const result = data.filter(function (item){
-        return item.price >= minPrice && item.price <= maxPrice;
+        const okMin = minPrice === null ? true : item.price >= minPrice;
+        const okMax = maxPrice === null ? true : item.price <= maxPrice;
+
+        return okMin && okMax;
     });
     renderProducts(result);
 }
@@ -50,6 +52,28 @@ function renderProducts(items) {
 
 }
 
+//
+// function renderCategories(items){
+//     const categoriesEl = document.getElementById('products-search__categories');
+//     if(!items.length) return console.error('No items found.');
+//
+//     const categories = items.map(function (item) {
+//         return item.category;
+//     })
+//
+//     categories.forEach((item, index) => {
+//         if(item){
+//             const catId = item.toLowerCase()
+//             categoriesEl.insertAdjacentHTML('beforeend', `
+//             <button class="product__card">
+//                 ${item}
+//             </button>`)
+//             console.log(catId)
+//         }
+//
+//     })
+// }
+//
 
 function initSearch(){
     const searchEl = document.getElementById('products-search');
@@ -80,20 +104,45 @@ function initPriceFilter(){
     const maxPriceEl = document.getElementById('products-search__max-price');
 
     function handlePriceChange(){
-         const minPrice = parseInt(minPriceEl.value) || parseInt("0");
-         const maxPrice = parseInt(maxPriceEl.value) || Infinity;
+         // const minPrice = minPriceEl.value === '' ? null : parseInt(minPriceEl.value);
+         // const maxPrice = maxPriceEl.value === '' ? null : parseInt(maxPriceEl.value);
+        let minPrice = null;
+        let maxPrice = null;
+        const minValue = Number(minPriceEl.value);
+        const maxValue = Number(maxPriceEl.value);
+
+        if(minPriceEl.value !== '' && Number.isInteger(minValue)){
+            minPrice = minValue;
+        }
+        if(maxPriceEl.value !== '' && Number.isInteger(maxValue)){
+            maxPrice = maxValue;
+        }
+
          filterByPrice(minPrice, maxPrice);
+    }
+
+    function blockInvalidKeys(event){
+        const blocked = ['+', '-', '.', ',', 'e', 'E']
+        if(blocked.includes(event.key)){
+            event.preventDefault();
+        }
     }
 
     minPriceEl.addEventListener('input', handlePriceChange);
     maxPriceEl.addEventListener('input', handlePriceChange);
+    minPriceEl.addEventListener('keydown', blockInvalidKeys);
+    maxPriceEl.addEventListener('keydown', blockInvalidKeys);
 }
 
+document.addEventListener('DOMContentLoaded', function(){
+    renderProducts(data);
+    initSearch();
+    initStockFilter();
+    initPriceFilter();
+})
 
-renderProducts(data);
-initSearch();
-initStockFilter();
-initPriceFilter();
+
+// renderCategories(data);
 
 //сделать кнопку которая будет показывать только те что в наличии , inStock - true
 // сделать фильтр по цене ( инпут интеджерс , с числами )
