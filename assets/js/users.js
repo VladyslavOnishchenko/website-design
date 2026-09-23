@@ -1,49 +1,36 @@
-async function getUsers() {
-    try {
-        const users = await fetch('http://194.61.53.73/api/v1/users');
 
-        const data = await users.json();
-        // console.log(data);
+async function getUsers(){
+    try{
+        const response = await fetch('https://dummyjson.com/users');
 
-        return data.users.data;
+        return await response.json();
 
-    } catch (err) {
-        console.log(err);
+    }catch(err){
+        console.error("Error getting users");
     }
 }
 
-
-async function usersRender() {
-
+async function usersRender(){
     const users = await getUsers();
+    console.log( users);
 
-    if (!users.length) return;
+    if(!users.users.length) return;
 
-    const card = document.querySelector('.users');
-    users.forEach(({id, email}) => {
+    const card = document.getElementById("users");
 
+    if(!card) return;
+
+    users.forEach(({id, firstName, lastName, email, image}) => {
         card.innerHTML += `
         <div class="users__card">
-            <div class="users__id">${id}</div>
-            <div class="users__email">${email}</div>
-        </div>`;
+        <div class="users__id">${id}</div>
+        <div class="users__name">${firstName} ${lastName}</div>
+        <div class="users__email">${email}</div>
+        <div class="users__image">${image}</div>
+</div>`
     })
-
-}
-
-
-function searchUsers() {
-    const input = document.getElementById('input-user-search');
-
-    if (!input) return;
-
-    input.addEventListener('input', (e) => {
-        const search = e.target.value;
-
-        console.log(search)
-    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    searchUsers();
-});
+    usersRender();
+})
