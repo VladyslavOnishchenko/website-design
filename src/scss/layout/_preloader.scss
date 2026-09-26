@@ -1,0 +1,9 @@
+@use "../abstracts" as *;
+
+.preloader{
+  display: flex;
+
+  &--hidden{
+    display: none;
+  }
+}

@@ -1,9 +1,11 @@
 
 async function getUsers(){
     try{
-        const response = await fetch('https://dummyjson.com/users');
+        const response = await fetch('https://dummyjson.com/users').then(response => response.json());
 
-        return await response.json();
+        return response.users
+
+        // return await response.json();
 
     }catch(err){
         console.error("Error getting users");
@@ -12,9 +14,8 @@ async function getUsers(){
 
 async function usersRender(){
     const users = await getUsers();
-    console.log( users);
 
-    if(!users.users.length) return;
+    if(!users.length) return;
 
     const card = document.getElementById("users");
 
