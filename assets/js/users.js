@@ -1,37 +1,48 @@
+const baseUrl = 'http://194.61.53.73/api';
 
-async function getUsers(){
-    try{
-        const response = await fetch('https://dummyjson.com/users').then(response => response.json());
 
-        return response.users
+async function request(finalUrl, method, body) {
+    const response = await fetch(baseUrl + finalUrl, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        body: JSON.stringify(body)
+    })
+    const data = await response.json();
+    if (response.ok) {
+        return data
+    } else throw new Error(data.message || "Error");
 
-        // return await response.json();
-
-    }catch(err){
-        console.error("Error getting users");
-    }
 }
 
-async function usersRender(){
-    const users = await getUsers();
 
-    if(!users.length) return;
+async function createUser() {
 
-    const card = document.getElementById("users");
+    const form = document.getElementById("form");
+    if (!form) return;
 
-    if(!card) return;
+    form.addEventListener("submit", async event => {
 
-    users.forEach(({id, firstName, lastName, email, image}) => {
-        card.innerHTML += `
-        <div class="users__card">
-        <div class="users__id">${id}</div>
-        <div class="users__name">${firstName} ${lastName}</div>
-        <div class="users__email">${email}</div>
-        <div class="users__image">${image}</div>
-</div>`
+        event.preventDefault();
+        const currentForm = event.currentTarget;
+        const name = currentForm.querySelector("input[name='name']").value;
+        const email = currentForm.querySelector("input[name='email']").value;
+        const password = currentForm.querySelector("input[name='password']").value;
+        const message = document.getElementById("form__message");
+
+        try {
+            const data = await request('/user/create', 'POST', {name, email, password});
+            console.log(data);
+            message.textContent = "Created Successfully";
+        } catch (error) {
+            console.error(error);
+            message.textContent = error.message;
+        }
     })
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    usersRender();
-})
+createUser();
+
+

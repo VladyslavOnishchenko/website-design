@@ -47,16 +47,38 @@
         <div class="container users__container">
             <div class="users__wrapper">
                 <header class="users__content">
+                    <!--                    <h1 class="users__title">Users</h1>-->
+                    <!--                    <label for="input-user-search">-->
+                    <!--                        Search users-->
+                    <!--                    </label>-->
+
+                    <!--                    <input id="input-user-search" class="users__input" type="text" placeholder="Search users">-->
                     <h1 class="users__title">Users</h1>
-                    <label for="input-user-search">
-                        Search users
-                    </label>
-
-                    <input id="input-user-search" class="users__input" type="text" placeholder="Search users">
-
-                    <div id="users" class="users">
+                    <div id="users__list" class="users__list">
 
                     </div>
+
+                    <form id="form" method="post" action="https://liquefy-greasily-passport.ngrok-free.dev/api/users" class="form">
+                        <h2>Form</h2>
+                        <label for="form__name">
+                            Name
+                        </label>
+                        <input id="form__name" class="form__name" name="name" type="text" placeholder="Name">
+                        <label for="form__email">
+                            Email
+                        </label>
+                        <input id="form__email" class="form__email" name="email" type="email" placeholder="Email address">
+                        <label for="form__password">
+                            Password
+                        </label>
+                        <input id="form__password" class="form__password" name="password" type="password" placeholder="Password">
+
+                        <label for="form__confirm">
+                            <button id="form__confirm" class="button button--secondary form__confirm">Confirm</button>
+                        </label>
+
+                        <div id="form__message" class="form__message"></div>
+                    </form>
                 </header>
             </div>
         </div>
@@ -116,7 +138,7 @@
 <script src="assets/js/counter.js"></script>
 <script src="assets/js/function.js"></script>
 <!--<script src="assets/js/contact-us.js"></script>-->
-<script src="assets/js/users.js"></script>
+<script type="module" src="assets/js/users.js"></script>
 
 </body>
 </html>
