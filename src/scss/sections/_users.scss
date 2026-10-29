@@ -11,10 +11,9 @@
     display: flex;
   }
 
-  &__card{
-    border: 1px solid $white;
-
-
+  .user{
+    display: flex;
+    flex-direction: row;
   }
 
 }
